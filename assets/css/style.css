@@ -1104,3 +1104,29 @@ footer div{
 .download-btn-rect:hover {
     background-color: #1e90ff; /* Couleur plus foncée au survol */
 }
+
+.scroll-arrow {
+  font-size: 2rem; /* Adjust size as needed */
+  text-align: center;
+  margin-top: 20px; /* Space between text and arrow */
+  animation: pulse 1.5s infinite;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.scroll-arrow:hover {
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
