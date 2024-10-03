@@ -1070,3 +1070,27 @@ footer div{
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
+
+
+.resource-buttons {
+    display: flex; /* Utilise flexbox pour un alignement facile */
+    justify-content: center; /* Centre les boutons horizontalement */
+    gap: 10px; /* Espace entre les boutons */
+}
+
+.resource-link {
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    padding: 10px 15px; /* Ajuste la taille du bouton */
+    border: none; /* Retire la bordure */
+    border-radius: 5px; /* Arrondi les coins du bouton */
+    text-align: center; /* Centre le texte */
+    text-decoration: none; /* Retire le soulignement */
+    font-size: 14px; /* Ajuste la taille de la police */
+    transition: background-color 0.3s; /* Ajoute une transition pour un effet hover */
+}
+
+.resource-link:hover {
+    background-color: #0056b3; /* Change la couleur au survol */
+}
+
