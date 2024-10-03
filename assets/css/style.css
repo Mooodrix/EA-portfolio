@@ -1018,3 +1018,54 @@ footer div{
 .download-btn-rect:hover {
   background: #555;
 }
+
+
+/* Styles pour le tableau de synthèse */
+#synthesis-section {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* Séparateur */
+.separator {
+  border: none;
+  height: 2px;
+  background-color: #ddd;
+  margin: 30px 0;
+}
+
+/* Styles pour la section compétences */
+#skills-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Liste des compétences */
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes pour les compétences */
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.skill-item {
+  background-color: #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.skill-item h4 {
+  margin: 0;
+  color: #0e76a8; /* Couleur personnalisée pour les titres */
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
