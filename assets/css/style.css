@@ -1039,33 +1039,43 @@ footer div{
 
 /* Styles pour la section compétences */
 #skills-section {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Arrière-plan clair pour le contraste */
+    padding: 40px 20px; /* Padding pour un espacement approprié */
+    border-radius: 12px; /* Coins arrondis pour les cartes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
 }
 
-/* Liste des compétences */
+#skills-section h2 {
+    color: #0e76a8; /* Couleur pour le titre */
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
 .skills-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Deux colonnes pour les compétences */
-  gap: 15px;
-  margin-top: 15px;
+    display: grid; /* Utilisation de Grid pour le layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive avec des colonnes fluides */
+    gap: 15px; /* Espace entre les compétences */
 }
 
 .skill-item {
-  background-color: #e9ecef;
-  border-radius: 8px;
-  padding: 15px;
-  transition: transform 0.3s ease;
+    background-color: #e9ecef; /* Fond gris clair */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 15px; /* Espacement intérieur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour l'animation */
+    text-align: center; /* Centrer le texte */
 }
 
 .skill-item h4 {
-  margin: 0;
-  color: #0e76a8; /* Couleur personnalisée pour les titres */
+    margin: 0; /* Supprime la marge par défaut */
+    color: #0e76a8; /* Couleur personnalisée pour les titres */
 }
 
+.skill-item p {
+    color: #555; /* Couleur du texte pour la description */
+}
+
+/* Effet de survol pour les compétences */
 .skill-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); /* Déplacement vers le haut lors du survol */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Ombre plus marquée lors du survol */
 }
