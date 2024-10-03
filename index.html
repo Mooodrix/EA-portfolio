@@ -55,6 +55,9 @@
 
           <img src="assets/image/logo.png" alt="ìcone iuricode" onload="SVGInject(this)" id="logo" width="500px" height="500px" />
         </div>
+        <div class="scroll-arrow" id="scroll-arrow">
+      &#8595;
+        </div>
       </div>
     </section>
 
@@ -345,6 +348,14 @@
           
           <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
           <script type="module" src="assets/js/main.js"></script>
+
+
+  <script>
+  document.getElementById("scroll-arrow").addEventListener("click", function() {
+    document.getElementById("s-about").scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
           </body>
           
           </html>
