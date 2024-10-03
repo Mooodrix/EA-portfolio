@@ -1048,48 +1048,6 @@ footer div{
     }
 }
 
-#s-skills .grid-layout h2 {
-    text-align: center; /* Centrage du titre */
-    padding-bottom: 24px; /* Espacement sous le titre */
-    color: #fff; /* Couleur du texte blanc */
-    font-size: 4rem; /* Taille de police pour le titre */
-    font-weight: 500; /* Poids de police */
-}
-
-#s-skills .grid-layout #skills {
-    display: flex; /* Utilisation du flex pour alignement */
-    flex-direction: column; /* Aligne les articles en colonne */
-    align-items: center; /* Centre les articles */
-    height: auto; /* Hauteur automatique */
-}
-
-#s-skills .grid-layout #skills article {
-    background-color: #151515; /* Fond sombre pour les articles */
-    padding: 32px; /* Espacement intérieur */
-    margin: 16px; /* Espacement autour des articles */
-    width: 100%; /* Prend toute la largeur disponible */
-    max-width: 800px; /* Largeur maximale pour les articles */
-    border: 1px solid #1f1f1f; /* Bordure sombre */
-    border-radius: 4px; /* Coins arrondis */
-    transition: 0.5s all ease; /* Transition pour les effets */
-}
-
-#s-skills .grid-layout #skills article:hover {
-    border: 1px solid #38b6ff; /* Bordure bleue au survol */
-}
-
-#s-skills .grid-layout #skills article h3 {
-    color: #fff; /* Couleur blanche pour les titres */
-    font-size: 2.4rem; /* Taille de police pour les sous-titres */
-    font-weight: 500; /* Poids de police */
-}
-
-#s-skills .grid-layout #skills article p {
-    line-height: 2.4rem; /* Hauteur de ligne pour le texte */
-    color: #9ca3af; /* Couleur du texte pour la description */
-    font-size: 1.8rem; /* Taille de police pour le texte */
-}
-
 .download-btn-rect {
     display: inline-block;
     margin-top: 20px; /* Espacement au-dessus du bouton */
