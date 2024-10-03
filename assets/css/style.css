@@ -1037,45 +1037,70 @@ footer div{
   margin: 30px 0;
 }
 
-/* Styles pour la section compétences */
-#skills-section {
-    background-color: #f9f9f9; /* Arrière-plan clair pour le contraste */
-    padding: 40px 20px; /* Padding pour un espacement approprié */
-    border-radius: 12px; /* Coins arrondis pour les cartes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
+#s-skills {
+    padding: 96px 48px; /* Uniforme avec les autres sections */
+    background-color: #111; /* Fond sombre */
 }
 
-#skills-section h2 {
-    color: #0e76a8; /* Couleur pour le titre */
-    text-align: center; /* Centrer le titre */
-    margin-bottom: 20px; /* Espacement sous le titre */
+@media screen and (max-width: 992px) {
+    #s-skills {
+        padding: 48px 24px; /* Padding réduit sur les petits écrans */
+    }
 }
 
-.skills-list {
-    display: grid; /* Utilisation de Grid pour le layout */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive avec des colonnes fluides */
-    gap: 15px; /* Espace entre les compétences */
+#s-skills .grid-layout h2 {
+    text-align: center; /* Centrage du titre */
+    padding-bottom: 24px; /* Espacement sous le titre */
+    color: #fff; /* Couleur du texte blanc */
+    font-size: 4rem; /* Taille de police pour le titre */
+    font-weight: 500; /* Poids de police */
 }
 
-.skill-item {
-    background-color: #e9ecef; /* Fond gris clair */
-    border-radius: 8px; /* Coins arrondis */
-    padding: 15px; /* Espacement intérieur */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour l'animation */
-    text-align: center; /* Centrer le texte */
+#s-skills .grid-layout #skills {
+    display: flex; /* Utilisation du flex pour alignement */
+    flex-direction: column; /* Aligne les articles en colonne */
+    align-items: center; /* Centre les articles */
+    height: auto; /* Hauteur automatique */
 }
 
-.skill-item h4 {
-    margin: 0; /* Supprime la marge par défaut */
-    color: #0e76a8; /* Couleur personnalisée pour les titres */
+#s-skills .grid-layout #skills article {
+    background-color: #151515; /* Fond sombre pour les articles */
+    padding: 32px; /* Espacement intérieur */
+    margin: 16px; /* Espacement autour des articles */
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 800px; /* Largeur maximale pour les articles */
+    border: 1px solid #1f1f1f; /* Bordure sombre */
+    border-radius: 4px; /* Coins arrondis */
+    transition: 0.5s all ease; /* Transition pour les effets */
 }
 
-.skill-item p {
-    color: #555; /* Couleur du texte pour la description */
+#s-skills .grid-layout #skills article:hover {
+    border: 1px solid #38b6ff; /* Bordure bleue au survol */
 }
 
-/* Effet de survol pour les compétences */
-.skill-item:hover {
-    transform: translateY(-5px); /* Déplacement vers le haut lors du survol */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Ombre plus marquée lors du survol */
+#s-skills .grid-layout #skills article h3 {
+    color: #fff; /* Couleur blanche pour les titres */
+    font-size: 2.4rem; /* Taille de police pour les sous-titres */
+    font-weight: 500; /* Poids de police */
+}
+
+#s-skills .grid-layout #skills article p {
+    line-height: 2.4rem; /* Hauteur de ligne pour le texte */
+    color: #9ca3af; /* Couleur du texte pour la description */
+    font-size: 1.8rem; /* Taille de police pour le texte */
+}
+
+.download-btn-rect {
+    display: inline-block;
+    margin-top: 20px; /* Espacement au-dessus du bouton */
+    padding: 10px 20px; /* Espacement intérieur */
+    background-color: #38b6ff; /* Couleur du bouton */
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s; /* Transition pour le changement de couleur */
+}
+
+.download-btn-rect:hover {
+    background-color: #1e90ff; /* Couleur plus foncée au survol */
 }
