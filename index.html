@@ -1,799 +1,376 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio // Elyès Amor</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-color: #0a0a1e;
-            --text-color: #ffffff;
-            --accent-color: #00ffcc;
-            --secondary-accent: #ff00cc;
-            --card-bg: rgba(255,255,255,0.1);
-            --card-border: rgba(255,255,255,0.2);
-            --glow: 0 0 20px rgba(0,255,255,0.3);
-        }
-
-        [data-theme="light"] {
-            --bg-color: #e0e7ff;
-            --text-color: #0a0a1e;
-            --accent-color: #0066cc;
-            --secondary-accent: #cc0066;
-            --card-bg: rgba(0,0,0,0.1);
-            --card-border: rgba(0,0,0,0.2);
-            --glow: 0 0 20px rgba(0,102,204,0.3);
-        }
-
-        body {
-            background: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Arial', sans-serif;
-            overflow-x: hidden;
-            cursor: none;
-        }
-
-        /* Custom Cursor */
-        .custom-cursor {
-            position: fixed;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            box-shadow: var(--glow);
-            animation: pulseCursor 2s infinite;
-        }
-
-        @keyframes pulseCursor {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
-        }
-
-        /* Orbital Background */
-        #orbital-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle, rgba(20,20,50,0.8), var(--bg-color));
-        }
-
-        .orbit {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            animation: orbitMove 15s infinite linear;
-            opacity: 0.3;
-        }
-
-        @keyframes orbitMove {
-            0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-            100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
-        }
-
-        /* Main Container */
-        #main-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 20px;
-        }
-
-        /* Holographic Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px;
-            background: linear-gradient(to bottom, var(--bg-color), transparent);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav img {
-            width: 150px;
-            filter: drop-shadow(var(--glow));
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
-
-        .nav-list li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 10px 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 50px;
-            transition: box-shadow 0.3s, transform 0.3s;
-            box-shadow: var(--glow);
-        }
-
-        .nav-list li a:hover {
-            box-shadow: 0 0 30px var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 50px;
-            padding: 10px;
-            cursor: pointer;
-            box-shadow: var(--glow);
-            transition: box-shadow 0.3s;
-        }
-
-        .theme-toggle:hover {
-            box-shadow: 0 0 30px var(--accent-color);
-        }
-
-        /* Section Cards */
-        .quantum-card {
-            position: relative;
-            background: var(--card-bg);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-            box-shadow: var(--glow);
-            transition: box-shadow 0.3s;
-            overflow: hidden;
-        }
-
-        .quantum-card:hover {
-            box-shadow: 0 0 40px var(--accent-color);
-        }
-
-        /* Holographic Glow */
-        .quantum-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            opacity: 0.3;
-            animation: holoGlow 5s infinite linear;
-        }
-
-        @keyframes holoGlow {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        /* Home Section */
-        #s-home {
-            display: flex;
-            align-items: center;
-            min-height: 80vh;
-            gap: 40px;
-        }
-
-        #home-container-text h1 {
-            font-size: 3.5rem;
-            background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: var(--glow);
-        }
-
-        #home-container-text p {
-            font-size: 1.3rem;
-            color: var(--text-color);
-            opacity: 0.8;
-            margin: 20px 0;
-        }
-
-        .download-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: var(--card-bg);
-            border: 1px solid var(--accent-color);
-            border-radius: 50px;
-            color: var(--accent-color);
-            font-size: 1rem;
-            text-decoration: none;
-            transition: box-shadow 0.3s, transform 0.3s;
-            box-shadow: var(--glow);
-        }
-
-        .download-btn:hover {
-            box-shadow: 0 0 30px var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        #logo {
-            width: 250px;
-            filter: drop-shadow(var(--glow));
-            animation: subtleFloat 8s ease-in-out infinite;
-        }
-
-        @keyframes subtleFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* About Section */
-        #s-about {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-
-        #creator-photo {
-            width: 180px;
-            height: 180px;
-            background: url('assets/image/creator-photo.jpg') center/cover;
-            border-radius: 20px;
-            box-shadow: var(--glow);
-        }
-
-        #creator-photo h3 {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            text-shadow: varhover: none;
-        }
-
-        #s-about nav ul {
-            display: flex;
-            gap: 15px;
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        #s-about nav img {
-            width: 40px;
-            filter: drop-shadow(var(--glow));
-            transition: transform 0.3s;
-        }
-
-        #s-about nav img:hover {
-            transform: scale(1.1);
-        }
-
-        .discord-button {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-color);
-        }
-
-        /* Experience Section */
-        #experience {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .option-experience {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: var(--glow);
-            transition: box-shadow 0.3s;
-        }
-
-        .option-experience:hover {
-            box-shadow: 0 0 30px var(--accent-color);
-        }
-
-        /* Projects Section - Carousel */
-        #projects {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 20px;
-            padding: 20px 0;
-            scrollbar-width: none;
-        }
-
-        #projects::-webkit-scrollbar {
-            display: none;
-        }
-
-        #projects article {
-            flex: 0 0 300px;
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: var(--glow);
-            scroll-snap-align: center;
-            transition: box-shadow 0.3s;
-            transform: perspective(1000px) rotateY(0deg);
-        }
-
-        #projects article:hover {
-            box-shadow: 0 0 30px var(--accent-color);
-            transform: perspective(1000px) translateZ(20px);
-        }
-
-        #projects a {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--accent-color);
-            text-decoration: none;
-            border: 1px solid var(--accent-color);
-            padding: 8px 16px;
-            border-radius: 50px;
-        }
-
-        /* Veille Section - Timeline */
-        #services {
-            position: relative;
-            padding-left: 40px;
-        }
-
-        #services::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--accent-color);
-            opacity: 0.3;
-        }
-
-        #services article {
-            position: relative;
-            margin: 40px 0;
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: var(--glow);
-            transition: box-shadow 0.3s;
-        }
-
-        #services article::before {
-            content: '';
-            position: absolute;
-            left: -36px;
-            top: 50%;
-            width: 16px;
-            height: 16px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            transform: translateY(-50%);
-            box-shadow: var(--glow);
-            animation: pulseNode 2s infinite;
-        }
-
-        @keyframes pulseNode {
-            0%, 100% { transform: translateY(-50%) scale(1); }
-            50% { transform: translateY(-50%) scale(1.2); }
-        }
-
-        #services article:hover {
-            box-shadow: 0 0 30px var(--accent-color);
-        }
-
-        .resource-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .resource-buttons a {
-            color: var(--accent-color);
-            text-decoration: none;
-            border: 1px solid var(--accent-color);
-            padding: 8px 16px;
-            border-radius: 50px;
-            transition: box-shadow 0.3s;
-        }
-
-        .resource-buttons a:hover {
-            box-shadow: 0 0 20px var(--accent-color);
-        }
-
-        /* Skills Section - Holographic Bars */
-        .skills-list {
-            list-style: none;
-            display: grid;
-            gap: 20px;
-        }
-
-        .skill-item {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: var(--glow);
-            transition: box-shadow 0.3s;
-        }
-
-        .skill-item:hover {
-            box-shadow: 0 0 30px var(--accent-color);
-        }
-
-        .skill-item h4 {
-            margin-bottom: 10px;
-        }
-
-        .skill-item p {
-            opacity: 0.8;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--card-bg);
-            border-radius: 20px;
-            box-shadow: var(--glow);
-            margin: 40px 0;
-        }
-
-        footer p {
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        footer img {
-            width: 80px;
-            filter: drop-shadow(var(--glow));
-            margin-top: 10px;
-        }
-
-        /* Scroll Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            #s-home {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            #s-about {
-                flex-direction: column;
-            }
-
-            .nav-list {
-                flex-direction: column;
-                background: var(--card-bg);
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                padding: 20px;
-                display: none;
-                backdrop-filter: blur(10px);
-            }
-
-            .nav-list.active {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-                cursor: pointer;
-            }
-
-            .mobile-menu div {
-                width: 25px;
-                height: 3px;
-                background: var(--text-color);
-                margin: 5px 0;
-                transition: transform 0.3s, opacity 0.3s;
-            }
-
-            .mobile-menu.active .line1 {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .mobile-menu.active .line2 {
-                opacity: 0;
-            }
-
-            .mobile-menu.active .line3 {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
-
-            #projects {
-                flex-direction: column;
-                overflow-x: hidden;
-            }
-
-            #projects article {
-                flex: 0 0 auto;
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="shortcut icon" href="assets/image/logo-page.svg" type="image/x-icon" />
+  <link rel="icon" href="assets/image/logo-page.svg" />
+  <link rel="apple-touch-icon" href="assets/image/logo-page.svg" />
+  <link rel="canonical" href="https://iuricode.com/" />
+  <script src="assets/js/svg-inject.min.js"></script>
+  <title>Portfolio // Elyès Amor</title>
 </head>
+
 <body>
-    <div id="orbital-background"></div>
-    <div class="custom-cursor"></div>
-    <header>
-        <nav>
-            <img src="assets/image/logo-iuricode.png" alt="iuricode" width="150px" height="25px">
-            <div class="mobile-menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="nav-list">
-                <li><a href="#s-about">Qui suis-je</a></li>
-                <li><a href="#s-experience">Expériences</a></li>
-                <li><a href="#s-projects">Projets</a></li>
-                <li><a href="#s-services">Veille</a></li>
-                <li><a href="#s-skills">Compétences</a></li>
-            </ul>
-            <button class="theme-toggle">🌓</button>
-        </nav>
-    </header>
+  <header>
+    <div class="grid-layout">
+      <nav>
+        <img src="assets/image/logo-iuricode.png" alt="iuricode" width="150px" height="25px" />
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#s-about">Qui suis-je</a></li>
+          <li><a href="#s-experience">Expériences</a></li>
+          <li><a href="#s-projects">Projets</a></li>
+          <li><a href="#s-services">Veille</a></li>
+          <li><a href="#s-skills">Tableau de synthèse</a></li>
+          <li><a href="#s-skills">Mes compétences</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main id="main-container">
-        <section id="s-home" class="quantum-card">
-            <div id="home-container-text" class="reveal">
-                <h1>Portfolio De <span>Elyès Amor</span></h1>
-                <p>Étudiant en Bachelor 3ème année IT Devops Fullstack / <span>IA</span>.</p>
-                <a href="./Elyes_Amor_3.pdf" download class="download-btn">Curriculum Vitae</a>
-            </div>
-            <img src="assets/image/logo.png" alt="icône iuricode" id="logo" width="250px" height="250px">
-        </section>
+  <main>
+    <section id="s-home">
+      <div class="grid-layout">
+        <div id="home">
+          <div id="home-container-text">
+            <h1 class="delayMediumReveal">
+              Portfolio De
+              <span>Elyès Amor</span>
+            </h1>
+            <p class="typewriter">
+              étudiant en Bachelor 3eme année IT Devops fullstack /  <span>IA</span>.
+            </p>
 
-        <section id="s-about" class="quantum-card">
-            <div id="creator-photo" class="reveal">
-                <h3>Dev<span>.</span></h3>
-            </div>
-            <div class="reveal">
-                <h4>Qui suis-je</h4>
-                <h2>Elyès Amor</h2>
-                <h3>Développeur Web & Applications</h3>
-                <p>Je m'appelle AMOR Elyès, j'ai 20 ans et je suis actuellement en recherche d'alternance pour mon Bachelor 3ème année IT Devops Fullstack / IA au sein de L'EPSI.</p>
-                <nav>
-                    <ul>
-                        <li><a href="https://github.com/Mooodrix" target="_blank"><img src="./assets/icons/github.svg" alt="GitHub"></a></li>
-                        <li><a href="https://www.linkedin.com/in/elyesllla/" target="_blank"><img src="./assets/icons/linkedin.svg" alt="LinkedIn"></a></li>
-                        <li class="discord-button"><img src="./assets/icons/discord.svg" alt="Discord"> <span>modrix2.0</span></li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
+            <a href="./Elyes_Amor_3.pdf" download='computer' class="download-btn">Curriculum Vitae <span class="u-bolder"></span></a>
+          </div>
 
-        <section id="s-experience" class="quantum-card">
-            <h2 class="reveal">Expériences <span>.</span></h2>
-            <div id="experience">
-                <div class="option-experience reveal">
-                    <h3>Site Web Alice Felumen</h3>
-                    <p class="dateExperience">9 mai 2023 au 9 juin 2023 (1 mois)</p>
-                    <p>Lors de mon premier stage en BTS SIO, j'ai conçu et développé un site web complet en utilisant la plateforme WordPress...</p>
-                    <a href="./rapportstage.pdf" download class="download-btn">Rapport de stage</a>
+          <img src="assets/image/logo.png" alt="ìcone iuricode" onload="SVGInject(this)" id="logo" width="500px" height="500px" />
+        </div>
+      </div>
+    </section>
+
+    <section id="s-about">
+      <div class="grid-layout">
+        <div>
+          <div id="creator-photo" class="delayMediumReveal">
+            <h3 class="delayExtraBigReveal">Dev<span>.</span></h3>
+          </div>
+          <div>
+            <h4 class="delayMediumReveal">Qui suis-je</h4>
+            <h2 class="delaySmallReveal">Elyès Amor</h2>
+            <h3 class="delayMediumReveal">
+              Developpeur Web & Applications
+            </h3>
+
+            <p class="delayLargeReveal">
+              Je m'appelle AMOR Elyès, j'ai 20 ans
+              et  Je suis actuellement en recherche d'alternance pour mon Bachelor 3eme
+              année IT Devops fullstack / IA au sein de L'EPSI.
+            </p>
+            <nav class="delayLargeReveal">
+              <ul>
+
+
+                <a href="https://github.com/Mooodrix" rel="noopener" target="_blank">
+                  <li>
+                    <img src="./assets/icons/github.svg" alt="Ícone do GitHub" onload="SVGInject(this)" /></li>
+                </a>
+
+                <a href="https://www.linkedin.com/in/elyesllla/" rel="noopener" target="_blank">
+                  <li>
+                    <img src="./assets/icons/linkedin.svg" alt="icone linkdein" onload="SVGInject(this)" /></li>
+                </a>
+                <br>
+                <div class="discord-button">
+                  <img src="./assets/icons/discord.svg" alt="Ícone do Discord" />
+                  <span class="discord-username">modrix2.0</span>
                 </div>
-                <div class="option-experience reveal">
-                    <h3>Serveur RedM (Red Dead Redemption 2)</h3>
-                    <p class="dateExperience">8 janvier 2024 au 23 février 2024 (1 mois)</p>
-                    <p>Lors de mon deuxième stage, j'ai développé une nouvelle compétence en LUA tout en consolidant mes connaissances en SQL...</p>
-                    <a href="./ElyesAmorstage2.pdf" download class="download-btn">Rapport de stage</a>
-                </div>
-            </div>
-        </section>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="s-projects" class="quantum-card">
-            <h2 class="reveal">Projets <span>.</span></h2>
-            <div id="projects">
-                <article class="reveal">
-                    <h3>Projet LyonPalme : Gestion des Adhérents</h3>
-                    <p>Sous Laravel</p>
-                    <a href="https://github.com/Mooodrix/LyonPalme" target="_blank">Voir le projet</a>
-                </article>
-                <article class="reveal">
-                    <h3>Projet LyonPalme : Gestion matériels</h3>
-                    <p>Sous Csharp</p>
-                    <a href="https://github.com/Mooodrix/LyonPalme-Gestion-Materiel" target="_blank">Voir le projet</a>
-                </article>
-                <article class="reveal">
-                    <h3>Sondage</h3>
-                    <p>Web Service / Création Sondage</p>
-                    <a href="https://github.com/Mooodrix/Sondage" target="_blank">Voir le projet</a>
-                </article>
-                <article class="reveal">
-                    <h3>Site web GSB</h3>
-                    <p>Site web effectué en 1ère année sous WordPress</p>
-                    <a href="https://gsb69.wordpress.com/" target="_blank">Voir le projet</a>
-                </article>
-                <article class="reveal">
-                    <h3>Gestion d'emprunts de matériels</h3>
-                    <p>PHP / Symphony, pour réserver du matériel et gérer le matériel informatique.</p>
-                    <a href="https://github.com/Mooodrix/Gestion-d-emprunts" target="_blank">Voir le projet</a>
-                </article>
-                <article class="reveal">
-                    <h3>Ecole Indirect</h3>
-                    <p>Comme Ecole Directe, servant à gérer les notes, absences, retard... en Python.</p>
-                    <a href="https://github.com/Mooodrix/ecoleindirect" target="_blank">Voir le projet</a>
-                </article>
+    <section id="s-experience">
+      <div class="grid-layout">
+        <h2 class="delaySmallReveal">Expériences <span>.</span></h2>
+        <div id="experience">
+          <div class="option-experience" id="experience-company">
+            <div class="company digitalhouse">
+              <h3>Site Web Alice Felumen</h3>
             </div>
-            <a href="https://github.com/Mooodrix" target="_blank" class="download-btn reveal">Repository GitHub</a>
-        </section>
-
-        <section id="s-services" class="quantum-card">
-            <h2 class="reveal">Veille Technologique <span>.</span></h2>
-            <div id="services">
-                <article class="reveal">
-                    <img src="assets/icons/8757988.png" width="80px" height="80px" alt="Icône de blockchain">
-                    <h3>Veille BTS : La Blockchain</h3>
-                    <p>Cette veille technologique a été réalisée dans le cadre de mon épreuve orale de BTS SIO...</p>
-                    <a href="./blockchain.pptx" download class="download-btn">Télécharger le PowerPoint</a>
-                    <h3>Ressources utilisées :</h3>
-                    <div class="resource-buttons">
-                        <a href="https://journalducoin.com/tag/blockchain/" target="_blank">Journal du Coin</a>
-                        <a href="https://www.lemondeinformatique.fr/actualites/" target="_blank">Le Monde Informatique</a>
-                        <a href="https://www.une-blockchain.fr/" target="_blank">Une Blockchain</a>
-                    </div>
-                </article>
-                <article class="reveal">
-                    <img src="assets/icons/trade.png" width="80px" height="80px" alt="Icône marché boursier">
-                    <h3>Veille sur le Marché Boursier et Forex</h3>
-                    <p>Depuis mon BTS, je poursuis des veilles sur le marché boursier et le Forex...</p>
-                    <div class="resource-buttons">
-                        <a href="https://www.investing.com/" target="_blank">Investing</a>
-                        <a href="https://www.bloomberg.com/markets" target="_blank">Bloomberg Markets</a>
-                        <a href="https://www.dailyfx.com/" target="_blank">DailyFX</a>
-                    </div>
-                </article>
-                <article class="reveal">
-                    <img src="assets/icons/bitcoin_11839555.png" width="80px" height="80px" alt="Icône de cryptomonnaie">
-                    <h3>Veille sur les Cryptomonnaies</h3>
-                    <p>Je suis également les évolutions des cryptomonnaies...</p>
-                    <div class="resource-buttons">
-                        <a href="https://cointelegraph.com/" target="_blank">CoinTelegraph</a>
-                        <a href="https://cryptobriefing.com/" target="_blank">Crypto Briefing</a>
-                        <a href="https://www.coindesk.com/" target="_blank">CoinDesk</a>
-                    </div>
-                </article>
-                <article class="reveal">
-                    <img src="assets/icons/ai.png" width="80px" height="80px" alt="Icône intelligence artificielle">
-                    <h3>Veille sur l'Intelligence Artificielle</h3>
-                    <p>Récemment, je m'intéresse de près aux avancées en intelligence artificielle...</p>
-                    <div class="resource-buttons">
-                        <a href="https://www.deeplearning.ai/" target="_blank">DeepLearning.ai</a>
-                        <a href="https://www.aitrends.com/" target="_blank">AI Trends</a>
-                        <a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a>
-                    </div>
-                </article>
+          </div>
+          <div class="text-experience">
+            <div>
+              <p class="dateExperience">9 mai 2023 au 9 juin 2023 (1 mois)</p>
             </div>
-        </section>
+            <h5 class="companyExperience">Site Web Alice Felumen</h5>
+            <p class="changeExperience">
+              Lors de mon premier stage en BTS SIO, j'ai conçu et développé un site web complet en utilisant la plateforme WordPress. 
+              Mes responsabilités comprenaient la création de l'architecture du site, l'intégration de contenus, ainsi que la personnalisation 
+              du thème selon les besoins de l'association. J'ai également optimisé les métadonnées pour améliorer le SEO, tout en mettant en 
+              place des stratégies de référencement naturel pour le nouveau site et le site principal de l'association. 
+              Ces actions ont permis de renforcer leur visibilité en ligne et d'améliorer leur positionnement sur les moteurs de recherche.
+              <a href=https://alicefelumenmagicienne.fr>alicefelumenmagicienne</a>
+            </p>
+            <a href="./rapportstage.pdf" download='computer' class="button">Rapport de stage <span class="u-bolder"></span></a>
+          </div>
+          
 
-        <section id="s-skills" class="quantum-card">
-            <h2 class="reveal">Mes compétences <span>.</span></h2>
+          <div class="option-experience" id="experience-redm">
+            <div class="company RedM">
+              <h3>Serveur RedM   (Red Dead Redemption 2)</h3>
+            </div>
+          </div>
+          <div class="text-experience">
+            <div>
+              <p class="dateExperience">8 janvier 2024 au 23 février 2024 (1 mois)</p>
+            </div>
+            <h5 class="companyExperience">Serveur RedM (Red Dead Redemption 2)</h5>
+            <p class="changeExperience">
+              Lors de mon deuxième stage, j'ai développé une nouvelle compétence en LUA tout en consolidant mes connaissances en SQL. 
+              J'ai apporté des modifications à des scripts existants et créé des scripts complets pour répondre aux besoins spécifiques du projet. 
+              Parmi mes réalisations, j'ai implémenté des fonctionnalités telles que le changement dynamique de l'eau à certains endroits dans le jeu 
+              et la modification automatique de la base de données lorsqu'un objet est consommé par un utilisateur. 
+              Ces contributions ont permis d'enrichir l'expérience de jeu et d'améliorer la gestion des interactions en temps réel.
+            </p>
+            <a href="./ElyesAmorstage2.pdf" download='computer' class="button">Rapport de stage <span class="u-bolder"></span></a>
+            
+
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <section id="s-projects">
+      <div class="grid-layout">
+        <h2 class="delaySmallReveal">Projets <span>.</span></h2>
+        <div id="projects">
+          <article class="intervalCardReveal teslabank">
+            <h3>Projet LyonPalme : Gestion des Adhérents</h3>
+            <p>
+              Sous Laravel
+            </p>
+          
+            <a href="https://github.com/Mooodrix/LyonPalme" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
+          </article>
+          
+          <article class="intervalCardReveal teslabank">
+            <h3>Projet LyonPalme : Gestion matériels</h3>
+            <p>
+              Sous Csharp
+            </p>
+
+            <a href="https://github.com/Mooodrix/LyonPalme-Gestion-Materiel" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
+          </article>
+          
+          <article class="intervalCardReveal teslabank">
+            <h3>Sondage</h3>
+            <p>
+              Web Service / Création Sondage
+            </p>
+            <a href="https://github.com/Mooodrix/Sondage" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
+          </article>
+          
+          <article class="intervalCardReveal teslabank">
+            <h3>Site web GSB</h3>
+            <p>
+              site web effectué en 1ere année sous wordpress
+            </p>
+            <a href="https://gsb69.wordpress.com/" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
+          </article>
+          
+          <article class="intervalCardReveal teslabank">
+            <h3>Gestion d'emprunts de matériels</h3>
+              <p>
+              PHP / Symphony, pour réserver du matériel et gérer le matériel informatique.
+            </p>
+            <a href="https://github.com/Mooodrix/Gestion-d-emprunts" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
+          </article>
+          
+          <article class="intervalCardReveal teslabank">
+            <h3>Ecole Indirect</h3>
+            <p>
+              Comme Ecole Directe, servant à gérer les notes, absences, retard... en Python.
+            </p>
+            <a href="https://github.com/Mooodrix/ecoleindirect" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
+          </article>
+          </div>
+          <a href="https://github.com/Mooodrix" rel="noopener" target="_blank" class="delayExtraBigReveal">Repository GitHub</a>
+          </div>
+          </section>
+          
+         <section id="s-services">
+  <div class="grid-layout">
+    <h2 class="delaySmallReveal">Veille Technologique <span>.</span></h2>
+    <div id="services">
+      
+      <!-- Veille BTS : Blockchain -->
+      <article class="intervalCardReveal">
+        <div>
+          <img src="assets/icons/8757988.png" width="100px" height="100px" alt="Icône de blockchain" />
+        </div>
+        <h3>Veille BTS : La Blockchain</h3>
+        <p>
+          Cette veille technologique a été réalisée dans le cadre de mon épreuve orale de BTS SIO. 
+          L'objectif était de comprendre et d'analyser les évolutions de la technologie blockchain et son impact sur les secteurs financiers et informatiques.
+        </p>
+        <a href="./blockchain.pptx" download="blockchain.pptx" class="download-btn-rect">Télécharger le PowerPoint</a>
+        <h3>Ressources utilisées :</h3>
+        <div class="resource-buttons">
+          <a href="https://journalducoin.com/tag/blockchain/" target="_blank" class="resource-link">Journal du Coin</a>
+          <a href="https://www.lemondeinformatique.fr/actualites/" target="_blank" class="resource-link">Le Monde Informatique</a>
+          <a href="https://www.une-blockchain.fr/" target="_blank" class="resource-link">Une Blockchain</a>
+        </div>
+      </article>
+
+      <!-- Veille Marché Boursier et Forex -->
+      <article class="intervalCardReveal">
+        <div>
+          <img src="assets/icons/trade.png" width="100px" height="100px" alt="Icône marché boursier" />
+        </div>
+        <h3>Veille sur le Marché Boursier et Forex</h3>
+        <p>
+          Depuis mon BTS, je poursuis des veilles sur le marché boursier et le Forex afin de suivre les tendances des devises, les mouvements de marché, et les stratégies de trading.
+        </p>
+        <h3>Ressources utilisées :</h3>
+        <div class="resource-buttons">
+          <a href="https://www.investing.com/" target="_blank" class="resource-link">Investing</a>
+          <a href="https://www.bloomberg.com/markets" target="_blank" class="resource-link">Bloomberg Markets</a>
+          <a href="https://www.dailyfx.com/" target="_blank" class="resource-link">DailyFX</a>
+        </div>
+      </article>
+
+      <!-- Veille Cryptomonnaies -->
+      <article class="intervalCardReveal">
+        <div>
+          <img src="assets/icons/bitcoin_11839555.png" width="100px" height="100px" alt="Icône de cryptomonnaie" />
+        </div>
+        <h3>Veille sur les Cryptomonnaies</h3>
+        <p>
+          Je suis également les évolutions des cryptomonnaies pour analyser les tendances des principaux actifs comme le Bitcoin et l'Ethereum, ainsi que les nouvelles technologies associées.
+        </p>
+        <h3>Ressources utilisées :</h3>
+        <div class="resource-buttons">
+          <a href="https://cointelegraph.com/" target="_blank" class="resource-link">CoinTelegraph</a>
+          <a href="https://cryptobriefing.com/" target="_blank" class="resource-link">Crypto Briefing</a>
+          <a href="https://www.coindesk.com/" target="_blank" class="resource-link">CoinDesk</a>
+        </div>
+      </article>
+
+      <!-- Veille sur l'Intelligence Artificielle -->
+      <article class="intervalCardReveal">
+        <div>
+          <img src="assets/icons/ai.png" width="100px" height="100px" alt="Icône intelligence artificielle" />
+        </div>
+        <h3>Veille sur l'Intelligence Artificielle</h3>
+        <p>
+          Récemment, je m'intéresse de près aux avancées en intelligence artificielle, couvrant des domaines tels que le machine learning, l'automatisation et leurs applications dans divers secteurs.
+        </p>
+        <h3>Ressources utilisées :</h3>
+        <div class="resource-buttons">
+          <a href="https://www.deeplearning.ai/" target="_blank" class="resource-link">DeepLearning.ai</a>
+          <a href="https://www.aitrends.com/" target="_blank" class="resource-link">AI Trends</a>
+          <a href="https://towardsdatascience.com/" target="_blank" class="resource-link">Towards Data Science</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+           
+mon portfolio : </section>
+
+
+          
+
+            <br>
+
+<section id="s-skills">
+    <div class="grid-layout">
+        <article id="skills-text">
+            <h2 class="delaySmallReveal">Mes compétences <span>.</span></h2>
+            <p class="delayMediumReveal changeDescription">
+                Description des compétences
+            </p>
+            <br>
             <ul class="skills-list">
-                <li class="skill-item reveal">
+                <li class="skill-item">
                     <h4>Langages de programmation</h4>
                     <p>PHP (Laravel [MVC] / Symphony), C# (.NET), JavaScript, Python</p>
                 </li>
-                <li class="skill-item reveal">
+                <li class="skill-item">
                     <h4>Technologies web</h4>
                     <p>HTML/CSS, SQL</p>
                 </li>
-                <li class="skill-item reveal">
+                <li class="skill-item">
                     <h4>Gestion de bases de données</h4>
                     <p>MySQL, MariaDB</p>
                 </li>
-                <li class="skill-item reveal">
+                <li class="skill-item">
                     <h4>Environnements de développement</h4>
                     <p>DataGrip, Git/GitLab, SSH, SSMS</p>
                 </li>
-                <li class="skill-item reveal">
+                <li class="skill-item">
                     <h4>OS maîtrisés</h4>
                     <p>Windows, Linux (Ubuntu, Kali, Debian)</p>
                 </li>
-                <li class="skill-item reveal">
+                <li class="skill-item">
                     <h4>Outils</h4>
                     <p>Suite Adobe (Photoshop), Prestashop, Wordpress</p>
                 </li>
             </ul>
-        </section>
-    </main>
+        </article>
+    </div>
+</section>
 
-    <footer class="quantum-card">
-        <p class="reveal">Vous pouvez m'envoyer un e-mail à <a href="mailto:elyesamor96@gmail.com">elyesamor96@gmail.com</a>.</p>
-        <p class="reveal">Copyright © 2025 <span>Amor Elyès</span> Tous droits réservés.</p>
-        <div class="reveal">
-            <p>Powered by</p>
-            <img src="./assets/logo2.png" alt="logo">
-        </div>
-    </footer>
 
-    <script>
-        // Generate Orbital Particles
-        const bg = document.getElementById('orbital-background');
-        for (let i = 0; i < 20; i++) {
-            const orbit = document.createElement('div');
-            orbit.className = 'orbit';
-            orbit.style.left = Math.random() * 100 + 'vw';
-            orbit.style.top = Math.random() * 100 + 'vh';
-            orbit.style.animationDelay = Math.random() * 15 + 's';
-            orbit.style.animationDuration = 10 + Math.random() * 10 + 's';
-            bg.appendChild(orbit);
-        }
 
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+          
+          
+          <footer>
+          <div class="grid-layout">
+            <p class="delayMediumReveal">Vous pouvez m'envoyer un e-mail à <a href="mailto:elyesamor96@gmail.com">elyesamor96@gmail.com</a>.
+          </p>    
+          <div class="grid-layout">
+          <p>
+            Copyright © 2025
+            <a href="https://iuricode.com" rel="noopener" target="_blank">
+          
+            </a>
+            <span>Amor Elyès </span>Tous droits réservés.
+          </p>
+          
+          <div>
+          <p>Powered by</p>
+          <img src="./assets/logo2.png" />
+          </div>
+          </div>
+          </div>
+          </footer>
+          </main>
+          
+          <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+          <script type="module" src="assets/js/main.js"></script>
 
-        // Theme Toggle
-        const themeToggle = document.querySelector('.theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.documentElement.setAttribute('data-theme', 
-                document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
-        });
 
-        // Scroll Reveal
-        const reveals = document.querySelectorAll('.reveal');
-        window.addEventListener('scroll', () => {
-            reveals.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.9) {
-                    el.classList.add('active');
-                }
-            });
-        });
+  <script>
+  document.getElementById("scroll-arrow").addEventListener("click", function() {
+    document.getElementById("s-about").scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
 
-        // Mobile Menu Toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navList = document.querySelector('.nav-list');
-        mobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            navList.classList.toggle('active');
-        });
-
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
-</body>
-</html>
+          </body>
+          
+          </html>
