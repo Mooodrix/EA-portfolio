@@ -1,376 +1,900 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio d'Elyès Amor - Développeur Full Stack DevOps & IA. Étudiant en Bachelor 3ème année à l'EPSI." />
+  <meta name="keywords" content="développeur, full stack, devops, intelligence artificielle, portfolio, web" />
+  <meta name="author" content="Elyès Amor" />
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="shortcut icon" href="assets/image/logo-page.svg" type="image/x-icon" />
-  <link rel="icon" href="assets/image/logo-page.svg" />
-  <link rel="apple-touch-icon" href="assets/image/logo-page.svg" />
-  <link rel="canonical" href="https://iuricode.com/" />
-  <script src="assets/js/svg-inject.min.js"></script>
-  <title>Portfolio // Elyès Amor</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/image/logo-page.svg" />
+  
+  <title>Elyès Amor - Développeur Full Stack DevOps & IA</title>
 </head>
 
 <body>
-  <header>
-    <div class="grid-layout">
-      <nav>
-        <img src="assets/image/logo-iuricode.png" alt="iuricode" width="150px" height="25px" />
-        <div class="mobile-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-        <ul class="nav-list">
-          <li><a href="#s-about">Qui suis-je</a></li>
-          <li><a href="#s-experience">Expériences</a></li>
-          <li><a href="#s-projects">Projets</a></li>
-          <li><a href="#s-services">Veille</a></li>
-          <li><a href="#s-skills">Tableau de synthèse</a></li>
-          <li><a href="#s-skills">Mes compétences</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav__brand">
+        <h2 class="nav__logo">EA</h2>
+      </div>
+      
+      <button class="nav__toggle" aria-label="Menu toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav__menu">
+        <li><a href="#about" class="nav__link">À propos</a></li>
+        <li><a href="#experience" class="nav__link">Expériences</a></li>
+        <li><a href="#projects" class="nav__link">Projets</a></li>
+        <li><a href="#portfolio-showcase" class="nav__link">Portfolio</a></li>
+        <li><a href="#veille" class="nav__link">Veille</a></li>
+        <li><a href="#skills" class="nav__link">Compétences</a></li>
+        <li><a href="#education" class="nav__link">Formation</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <section id="s-home">
-      <div class="grid-layout">
-        <div id="home">
-          <div id="home-container-text">
-            <h1 class="delayMediumReveal">
-              Portfolio De
-              <span>Elyès Amor</span>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <span class="hero__greeting">Bonjour, je suis</span>
+            <h1 class="hero__title">
+              Elyès <span class="hero__accent">Amor</span>
             </h1>
-            <p class="typewriter">
-              étudiant en Bachelor 3eme année IT Devops fullstack /  <span>IA</span>.
+            <h2 class="hero__subtitle">Développeur Full Stack DevOps & IA</h2>
+            <p class="hero__description">
+              Étudiant en Bachelor 3ème année IT DevOps Full Stack / IA à l'EPSI. 
+              Passionné par le développement web, l'intelligence artificielle et les nouvelles technologies.
             </p>
-
-            <a href="./Elyes_Amor_3.pdf" download='computer' class="download-btn">Curriculum Vitae <span class="u-bolder"></span></a>
-          </div>
-
-          <img src="assets/image/logo.png" alt="ìcone iuricode" onload="SVGInject(this)" id="logo" width="500px" height="500px" />
-        </div>
-      </div>
-    </section>
-
-    <section id="s-about">
-      <div class="grid-layout">
-        <div>
-          <div id="creator-photo" class="delayMediumReveal">
-            <h3 class="delayExtraBigReveal">Dev<span>.</span></h3>
-          </div>
-          <div>
-            <h4 class="delayMediumReveal">Qui suis-je</h4>
-            <h2 class="delaySmallReveal">Elyès Amor</h2>
-            <h3 class="delayMediumReveal">
-              Developpeur Web & Applications
-            </h3>
-
-            <p class="delayLargeReveal">
-              Je m'appelle AMOR Elyès, j'ai 20 ans
-              et  Je suis actuellement en recherche d'alternance pour mon Bachelor 3eme
-              année IT Devops fullstack / IA au sein de L'EPSI.
-            </p>
-            <nav class="delayLargeReveal">
-              <ul>
-
-
-                <a href="https://github.com/Mooodrix" rel="noopener" target="_blank">
-                  <li>
-                    <img src="./assets/icons/github.svg" alt="Ícone do GitHub" onload="SVGInject(this)" /></li>
-                </a>
-
-                <a href="https://www.linkedin.com/in/elyesllla/" rel="noopener" target="_blank">
-                  <li>
-                    <img src="./assets/icons/linkedin.svg" alt="icone linkdein" onload="SVGInject(this)" /></li>
-                </a>
-                <br>
-                <div class="discord-button">
-                  <img src="./assets/icons/discord.svg" alt="Ícone do Discord" />
-                  <span class="discord-username">modrix2.0</span>
-                </div>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="s-experience">
-      <div class="grid-layout">
-        <h2 class="delaySmallReveal">Expériences <span>.</span></h2>
-        <div id="experience">
-          <div class="option-experience" id="experience-company">
-            <div class="company digitalhouse">
-              <h3>Site Web Alice Felumen</h3>
-            </div>
-          </div>
-          <div class="text-experience">
-            <div>
-              <p class="dateExperience">9 mai 2023 au 9 juin 2023 (1 mois)</p>
-            </div>
-            <h5 class="companyExperience">Site Web Alice Felumen</h5>
-            <p class="changeExperience">
-              Lors de mon premier stage en BTS SIO, j'ai conçu et développé un site web complet en utilisant la plateforme WordPress. 
-              Mes responsabilités comprenaient la création de l'architecture du site, l'intégration de contenus, ainsi que la personnalisation 
-              du thème selon les besoins de l'association. J'ai également optimisé les métadonnées pour améliorer le SEO, tout en mettant en 
-              place des stratégies de référencement naturel pour le nouveau site et le site principal de l'association. 
-              Ces actions ont permis de renforcer leur visibilité en ligne et d'améliorer leur positionnement sur les moteurs de recherche.
-              <a href=https://alicefelumenmagicienne.fr>alicefelumenmagicienne</a>
-            </p>
-            <a href="./rapportstage.pdf" download='computer' class="button">Rapport de stage <span class="u-bolder"></span></a>
-          </div>
-          
-
-          <div class="option-experience" id="experience-redm">
-            <div class="company RedM">
-              <h3>Serveur RedM   (Red Dead Redemption 2)</h3>
-            </div>
-          </div>
-          <div class="text-experience">
-            <div>
-              <p class="dateExperience">8 janvier 2024 au 23 février 2024 (1 mois)</p>
-            </div>
-            <h5 class="companyExperience">Serveur RedM (Red Dead Redemption 2)</h5>
-            <p class="changeExperience">
-              Lors de mon deuxième stage, j'ai développé une nouvelle compétence en LUA tout en consolidant mes connaissances en SQL. 
-              J'ai apporté des modifications à des scripts existants et créé des scripts complets pour répondre aux besoins spécifiques du projet. 
-              Parmi mes réalisations, j'ai implémenté des fonctionnalités telles que le changement dynamique de l'eau à certains endroits dans le jeu 
-              et la modification automatique de la base de données lorsqu'un objet est consommé par un utilisateur. 
-              Ces contributions ont permis d'enrichir l'expérience de jeu et d'améliorer la gestion des interactions en temps réel.
-            </p>
-            <a href="./ElyesAmorstage2.pdf" download='computer' class="button">Rapport de stage <span class="u-bolder"></span></a>
             
-
+            <div class="hero__actions">
+              <a href="./Elyes_Amor_3.pdf" download class="btn btn--primary">
+                <span>Télécharger CV</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7,10 12,15 17,10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn--secondary">Me contacter</a>
+            </div>
+            
+            <div class="hero__social">
+              <a href="https://github.com/Mooodrix" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/elyesllla/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <div class="discord-info">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.195.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                </svg>
+                <span>modrix2.0</span>
+              </div>
+            </div>
           </div>
-
-
+          
+          <div class="hero__visual">
+            <div class="hero__avatar">
+              <div class="avatar-circle">
+                <img src="assets/image/photo.jpg" alt="Elyès Amor" class="avatar-image" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="s-projects">
-      <div class="grid-layout">
-        <h2 class="delaySmallReveal">Projets <span>.</span></h2>
-        <div id="projects">
-          <article class="intervalCardReveal teslabank">
-            <h3>Projet LyonPalme : Gestion des Adhérents</h3>
-            <p>
-              Sous Laravel
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Qui suis-je</span>
+          <h2 class="section-title">À propos de moi</h2>
+        </div>
+        
+        <div class="about__content">
+          <div class="about__text">
+            <h3 class="about__subtitle">Développeur passionné</h3>
+            <p class="about__description">
+              Je m'appelle <strong>Elyès Amor</strong>, j'ai 20 ans et je suis actuellement étudiant en Bachelor 3ème année 
+              IT DevOps Full Stack / IA au sein de l'EPSI. Actuellement en poste chez <strong>Conedi</strong> en tant que 
+              développeur web full stack, je développe des solutions e-commerce et optimise l'expérience utilisateur.
             </p>
-          
-            <a href="https://github.com/Mooodrix/LyonPalme" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
-          </article>
-          
-          <article class="intervalCardReveal teslabank">
-            <h3>Projet LyonPalme : Gestion matériels</h3>
-            <p>
-              Sous Csharp
+            <p class="about__description">
+              Mon parcours m'a permis de développer une expertise technique solide dans plusieurs langages de programmation 
+              et frameworks, avec une spécialisation en PHP (Symfony, Laravel), développement e-commerce (PrestaShop) et 
+              optimisation SEO. Je cultive également une approche DevOps et une curiosité pour l'intelligence artificielle.
             </p>
+            
+            <div class="about__highlights">
+              <div class="highlight">
+                <h4>Formation</h4>
+                <p>Bachelor IT DevOps Full Stack / IA - EPSI</p>
+              </div>
+              <div class="highlight">
+                <h4>Statut</h4>
+                <p>Développeur Full Stack chez Conedi</p>
+              </div>
+              <div class="highlight">
+                <h4>Localisation</h4>
+                <p>Lyon, France</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about__visual">
+            <div class="profile-card">
+              <div class="profile-info">
+                <h4>Elyès Amor</h4>
+                <p>Développeur Full Stack</p>
+                <div class="status-indicator">
+                  <span class="status-dot"></span>
+                  Développeur chez Conedi
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <a href="https://github.com/Mooodrix/LyonPalme-Gestion-Materiel" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
-          </article>
-          
-          <article class="intervalCardReveal teslabank">
-            <h3>Sondage</h3>
-            <p>
-              Web Service / Création Sondage
-            </p>
-            <a href="https://github.com/Mooodrix/Sondage" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
-          </article>
-          
-          <article class="intervalCardReveal teslabank">
-            <h3>Site web GSB</h3>
-            <p>
-              site web effectué en 1ere année sous wordpress
-            </p>
-            <a href="https://gsb69.wordpress.com/" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
-          </article>
-          
-          <article class="intervalCardReveal teslabank">
-            <h3>Gestion d'emprunts de matériels</h3>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Mon parcours</span>
+          <h2 class="section-title">Expériences professionnelles</h2>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <span>Nov 2024 - Présent</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Conedi</h3>
+              <h4>Développeur Web Full Stack</h4>
               <p>
-              PHP / Symphony, pour réserver du matériel et gérer le matériel informatique.
-            </p>
-            <a href="https://github.com/Mooodrix/Gestion-d-emprunts" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
-          </article>
+                <strong>Refonte complète du site principal</strong> avec intégration et optimisation de contenus, 
+                modules et parcours utilisateurs pour améliorer l'expérience globale et le référencement naturel. 
+                Identification et correction de nombreuses failles techniques, apportant une meilleure cohérence, 
+                rapidité et stabilité au site.
+              </p>
+              <p>
+                <strong>Développement du site e-commerce</strong> 
+                <a href="https://chaussuredesécuritéfemme.com/" target="_blank" class="inline-link">chaussuredesécuritéfemme.com</a> 
+                incluant l'intégration complète des produits, l'optimisation SEO et la personnalisation avancée de PrestaShop.
+              </p>
+              <p>
+                <strong>Support technique quotidien</strong> : dépannage, maintenance, conseil et participation active 
+                à l'ensemble des projets de développement web.
+              </p>
+              <div class="timeline-skills">
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">PrestaShop</span>
+                <span class="skill-tag">HTML/CSS/JS</span>
+                <span class="skill-tag">SEO</span>
+                <span class="skill-tag">E-commerce</span>
+              </div>
+            </div>
+          </div>
           
-          <article class="intervalCardReveal teslabank">
-            <h3>Ecole Indirect</h3>
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <span>Mai - Juin 2023</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Anim'Magic</h3>
+              <h4>Développeur Web - Stage BTS SIO</h4>
+              <p>
+                <strong>Création complète d'un site web responsive</strong> pour une entreprise locale avec design moderne 
+                adapté à tous les formats. Travail soigné sur la hiérarchie de contenu, les appels à l'action et 
+                l'optimisation de l'expérience utilisateur.
+              </p>
+              <p>
+                <strong>Refonte stratégique du site principal</strong> pour améliorer significativement le référencement 
+                naturel (SEO). Optimisation de la structure, des contenus et des éléments techniques pour renforcer 
+                la présence sur les moteurs de recherche.
+              </p>
+              <div class="timeline-skills">
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">SEO</span>
+                <span class="skill-tag">HTML/CSS/JS</span>
+                <span class="skill-tag">Responsive Design</span>
+              </div>
+              <div class="timeline-links">
+                <a href="https://alicefelumenmagicienne.fr" target="_blank" class="link-external">
+                  Voir le site
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15,3 21,3 21,9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                </a>
+               </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <span>Jan - Fév 2024</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Serveur RedM (Red Dead Redemption 2)</h3>
+              <h4>Développeur Backend - Stage</h4>
+              <p>
+                Développement en LUA et consolidation des compétences SQL. Création et modification de scripts 
+                pour améliorer l'expérience de jeu. Implémentation de fonctionnalités dynamiques et gestion 
+                automatisée de la base de données.
+              </p>
+              <div class="timeline-skills">
+                <span class="skill-tag">LUA</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Game Development</span>
+                <span class="skill-tag">Database Management</span>
+              </div>
+              <div class="timeline-links">
+                   </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Mes réalisations</span>
+          <h2 class="section-title">Projets développés</h2>
+        </div>
+        
+        <div class="projects-grid">
+          <div class="project-card featured">
+            <div class="project-header">
+              <h3>LyonPalme - Gestion des Adhérents</h3>
+              <a href="https://github.com/Mooodrix/LyonPalme" target="_blank" class="project-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15,3 21,3 21,9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <p class="project-description">
+              Application web de gestion des adhérents développée avec Laravel. 
+              Système complet de CRUD avec authentification et interface utilisateur intuitive.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MVC</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>LyonPalme - Gestion Matériels</h3>
+              <a href="https://github.com/Mooodrix/LyonPalme-Gestion-Materiel" target="_blank" class="project-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15,3 21,3 21,9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <p class="project-description">
+              Application desktop pour la gestion du matériel sportif développée en C#.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">.NET</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Système de Sondage</h3>
+              <a href="https://github.com/Mooodrix/Sondage" target="_blank" class="project-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15,3 21,3 21,9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <p class="project-description">
+              Web Service pour la création et gestion de sondages en ligne avec interface responsive.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Web Service</span>
+              <span class="tech-tag">PHP</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Gestion d'Emprunts</h3>
+              <a href="https://github.com/Mooodrix/Gestion-d-emprunts" target="_blank" class="project-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15,3 21,3 21,9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <p class="project-description">
+              Application Symfony pour la réservation et gestion du matériel informatique.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Symfony</span>
+              <span class="tech-tag">PHP</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>École Indirect</h3>
+              <a href="https://github.com/Mooodrix/ecoleindirect" target="_blank" class="project-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15,3 21,3 21,9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <p class="project-description">
+              Clone d'École Directe développé en Python pour la gestion des notes, absences et retards.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Desktop App</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Site Web GSB</h3>
+              <a href="https://gsb69.wordpress.com/" target="_blank" class="project-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15,3 21,3 21,9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <p class="project-description">
+              Site web développé en première année avec WordPress pour présenter l'entreprise GSB.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">Web Design</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="projects-cta">
+          <a href="https://github.com/Mooodrix" target="_blank" class="btn btn--outline">
+            Voir tous mes projets sur GitHub
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15,3 21,3 21,9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Showcase Section -->
+    <section id="portfolio-showcase" class="portfolio-showcase">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Réalisations</span>
+          <h2 class="section-title">Aperçu de mes projets</h2>
+        </div>
+        
+        <div class="portfolio-carousel">
+          <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+              
+              <div class="portfolio-item">
+                <div class="portfolio-image">
+                  <img src="./assets/image/chaussurefemme.png" alt="Chaussure Femme">
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Chaussure Femme</h4>
+                  <p>Second site développé entièrement avec une interface moderne et responsive</p>
+                </div>
+              </div>
+              
+              <div class="portfolio-item">
+                <div class="portfolio-image">
+                  <img src="./assets/image/vetiwork.png" alt="Vetiwork">
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Vetiwork</h4>
+                  <p>Site principal avec refonte complète de l'interface et optimisation UX</p>
+                </div>
+              </div>
+              
+              <div class="portfolio-item">
+                <div class="portfolio-image">
+                  <img src="./assets/image/oms.png" alt="OMS">
+                </div>
+                <div class="portfolio-caption">
+                  <h4>OMS Multi-pays</h4>
+                  <p>Création et intégration d'une IA prédictive, sécurisé et automatisé d'une app OMS multi-pays</p>
+                </div>
+              </div>
+              
+              <div class="portfolio-item">
+                <div class="portfolio-image">
+                  <img src="./assets/image/seo.png" alt="SEO Analytics">
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Optimisation SEO</h4>
+                  <p>Vues du site principal : de 200 vues/mois à plus de 4000 après mon arrivée</p>
+                </div>
+              </div>
+              
+              <div class="portfolio-item">
+                <div class="portfolio-image">
+                  <img src="./assets/image/gestionstockmobile.png" alt="Gestion Stock Mobile">
+                </div>
+                <div class="portfolio-caption">
+                  <h4>Gestion Stock Mobile</h4>
+                  <p>Application mobile de gestion des stocks avec interface intuitive</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="carousel-controls">
+            <button class="carousel-btn carousel-btn--prev" id="prevBtn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <div class="carousel-indicators" id="carouselIndicators">
+              <button class="indicator active" data-slide="0"></button>
+              <button class="indicator" data-slide="1"></button>
+              <button class="indicator" data-slide="2"></button>
+              <button class="indicator" data-slide="3"></button>
+              <button class="indicator" data-slide="4"></button>
+            </div>
+            <button class="carousel-btn carousel-btn--next" id="nextBtn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+          
+    <!-- Veille Section -->
+    <section id="veille" class="veille">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Actualités tech</span>
+          <h2 class="section-title">Veille technologique</h2>
+        </div>
+        
+        <div class="veille-grid">
+          <div class="veille-card primary">
+            <div class="veille-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="M21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                <path d="M15 3l6 6"/>
+              </svg>
+            </div>
+            <h3>La Blockchain</h3>
             <p>
-              Comme Ecole Directe, servant à gérer les notes, absences, retard... en Python.
+              Veille technologique réalisée dans le cadre de mon BTS SIO sur l'évolution 
+              de la blockchain et son impact sur les secteurs financiers et informatiques.
             </p>
-            <a href="https://github.com/Mooodrix/ecoleindirect" rel="noopener" target="_blank" id="teslabank">Voir le projet</a>
-          </article>
+            <div class="veille-resources">
+              <h4>Sources suivies :</h4>
+              <div class="resource-links">
+                <a href="https://journalducoin.com/tag/blockchain/" target="_blank">Journal du Coin</a>
+                <a href="https://www.lemondeinformatique.fr/actualites/" target="_blank">Le Monde Informatique</a>
+                <a href="https://www.une-blockchain.fr/" target="_blank">Une Blockchain</a>
+              </div>
+            </div>
           </div>
-          <a href="https://github.com/Mooodrix" rel="noopener" target="_blank" class="delayExtraBigReveal">Repository GitHub</a>
-          </div>
-          </section>
           
-         <section id="s-services">
-  <div class="grid-layout">
-    <h2 class="delaySmallReveal">Veille Technologique <span>.</span></h2>
-    <div id="services">
-      
-      <!-- Veille BTS : Blockchain -->
-      <article class="intervalCardReveal">
-        <div>
-          <img src="assets/icons/8757988.png" width="100px" height="100px" alt="Icône de blockchain" />
-        </div>
-        <h3>Veille BTS : La Blockchain</h3>
-        <p>
-          Cette veille technologique a été réalisée dans le cadre de mon épreuve orale de BTS SIO. 
-          L'objectif était de comprendre et d'analyser les évolutions de la technologie blockchain et son impact sur les secteurs financiers et informatiques.
-        </p>
-        <a href="./blockchain.pptx" download="blockchain.pptx" class="download-btn-rect">Télécharger le PowerPoint</a>
-        <h3>Ressources utilisées :</h3>
-        <div class="resource-buttons">
-          <a href="https://journalducoin.com/tag/blockchain/" target="_blank" class="resource-link">Journal du Coin</a>
-          <a href="https://www.lemondeinformatique.fr/actualites/" target="_blank" class="resource-link">Le Monde Informatique</a>
-          <a href="https://www.une-blockchain.fr/" target="_blank" class="resource-link">Une Blockchain</a>
-        </div>
-      </article>
-
-      <!-- Veille Marché Boursier et Forex -->
-      <article class="intervalCardReveal">
-        <div>
-          <img src="assets/icons/trade.png" width="100px" height="100px" alt="Icône marché boursier" />
-        </div>
-        <h3>Veille sur le Marché Boursier et Forex</h3>
-        <p>
-          Depuis mon BTS, je poursuis des veilles sur le marché boursier et le Forex afin de suivre les tendances des devises, les mouvements de marché, et les stratégies de trading.
-        </p>
-        <h3>Ressources utilisées :</h3>
-        <div class="resource-buttons">
-          <a href="https://www.investing.com/" target="_blank" class="resource-link">Investing</a>
-          <a href="https://www.bloomberg.com/markets" target="_blank" class="resource-link">Bloomberg Markets</a>
-          <a href="https://www.dailyfx.com/" target="_blank" class="resource-link">DailyFX</a>
-        </div>
-      </article>
-
-      <!-- Veille Cryptomonnaies -->
-      <article class="intervalCardReveal">
-        <div>
-          <img src="assets/icons/bitcoin_11839555.png" width="100px" height="100px" alt="Icône de cryptomonnaie" />
-        </div>
-        <h3>Veille sur les Cryptomonnaies</h3>
-        <p>
-          Je suis également les évolutions des cryptomonnaies pour analyser les tendances des principaux actifs comme le Bitcoin et l'Ethereum, ainsi que les nouvelles technologies associées.
-        </p>
-        <h3>Ressources utilisées :</h3>
-        <div class="resource-buttons">
-          <a href="https://cointelegraph.com/" target="_blank" class="resource-link">CoinTelegraph</a>
-          <a href="https://cryptobriefing.com/" target="_blank" class="resource-link">Crypto Briefing</a>
-          <a href="https://www.coindesk.com/" target="_blank" class="resource-link">CoinDesk</a>
-        </div>
-      </article>
-
-      <!-- Veille sur l'Intelligence Artificielle -->
-      <article class="intervalCardReveal">
-        <div>
-          <img src="assets/icons/ai.png" width="100px" height="100px" alt="Icône intelligence artificielle" />
-        </div>
-        <h3>Veille sur l'Intelligence Artificielle</h3>
-        <p>
-          Récemment, je m'intéresse de près aux avancées en intelligence artificielle, couvrant des domaines tels que le machine learning, l'automatisation et leurs applications dans divers secteurs.
-        </p>
-        <h3>Ressources utilisées :</h3>
-        <div class="resource-buttons">
-          <a href="https://www.deeplearning.ai/" target="_blank" class="resource-link">DeepLearning.ai</a>
-          <a href="https://www.aitrends.com/" target="_blank" class="resource-link">AI Trends</a>
-          <a href="https://towardsdatascience.com/" target="_blank" class="resource-link">Towards Data Science</a>
-        </div>
-      </article>
-    </div>
-  </div>
-
-           
-mon portfolio : </section>
-
-
-          
-
-            <br>
-
-<section id="s-skills">
-    <div class="grid-layout">
-        <article id="skills-text">
-            <h2 class="delaySmallReveal">Mes compétences <span>.</span></h2>
-            <p class="delayMediumReveal changeDescription">
-                Description des compétences
+          <div class="veille-card">
+            <div class="veille-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+              </svg>
+            </div>
+            <h3>Intelligence Artificielle</h3>
+            <p>
+              Suivi des avancées en IA, machine learning et automatisation dans différents secteurs d'activité.
             </p>
-            <br>
-            <ul class="skills-list">
-                <li class="skill-item">
-                    <h4>Langages de programmation</h4>
-                    <p>PHP (Laravel [MVC] / Symphony), C# (.NET), JavaScript, Python</p>
-                </li>
-                <li class="skill-item">
-                    <h4>Technologies web</h4>
-                    <p>HTML/CSS, SQL</p>
-                </li>
-                <li class="skill-item">
-                    <h4>Gestion de bases de données</h4>
-                    <p>MySQL, MariaDB</p>
-                </li>
-                <li class="skill-item">
-                    <h4>Environnements de développement</h4>
-                    <p>DataGrip, Git/GitLab, SSH, SSMS</p>
-                </li>
-                <li class="skill-item">
-                    <h4>OS maîtrisés</h4>
-                    <p>Windows, Linux (Ubuntu, Kali, Debian)</p>
-                </li>
-                <li class="skill-item">
-                    <h4>Outils</h4>
-                    <p>Suite Adobe (Photoshop), Prestashop, Wordpress</p>
-                </li>
-            </ul>
-        </article>
-    </div>
-</section>
-
-
-
+            <div class="resource-links">
+              <a href="https://www.deeplearning.ai/" target="_blank">DeepLearning.ai</a>
+              <a href="https://www.aitrends.com/" target="_blank">AI Trends</a>
+              <a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a>
+            </div>
+          </div>
           
+          <div class="veille-card">
+            <div class="veille-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3>Marché Boursier & Forex</h3>
+            <p>
+              Analyse des tendances financières, mouvements de marché et stratégies de trading.
+            </p>
+            <div class="resource-links">
+              <a href="https://www.investing.com/" target="_blank">Investing</a>
+              <a href="https://www.bloomberg.com/markets" target="_blank">Bloomberg Markets</a>
+              <a href="https://www.dailyfx.com/" target="_blank">DailyFX</a>
+            </div>
+          </div>
           
-          <footer>
-          <div class="grid-layout">
-            <p class="delayMediumReveal">Vous pouvez m'envoyer un e-mail à <a href="mailto:elyesamor96@gmail.com">elyesamor96@gmail.com</a>.
-          </p>    
-          <div class="grid-layout">
-          <p>
-            Copyright © 2025
-            <a href="https://iuricode.com" rel="noopener" target="_blank">
+          <div class="veille-card">
+            <div class="veille-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3>Cryptomonnaies</h3>
+            <p>
+              Suivi des évolutions crypto, analyse des principaux actifs et technologies blockchain associées.
+            </p>
+            <div class="resource-links">
+              <a href="https://cointelegraph.com/" target="_blank">CoinTelegraph</a>
+              <a href="https://cryptobriefing.com/" target="_blank">Crypto Briefing</a>
+              <a href="https://www.coindesk.com/" target="_blank">CoinDesk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Expertise technique</span>
+          <h2 class="section-title">Mes compétences</h2>
+        </div>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Langages de programmation</h3>
+            <div class="skill-items">
+              <div class="skill-item">PHP</div>
+              <div class="skill-item">JavaScript</div>
+              <div class="skill-item">Python</div>
+              <div class="skill-item">HTML/CSS</div>
+            </div>
+          </div>
           
-            </a>
-            <span>Amor Elyès </span>Tous droits réservés.
+          <div class="skill-category">
+            <h3>Frameworks & CMS</h3>
+            <div class="skill-items">
+              <div class="skill-item">Symfony</div>
+              <div class="skill-item">Laravel</div>
+              <div class="skill-item">WordPress</div>
+              <div class="skill-item">PrestaShop</div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Bases de données & Backend</h3>
+            <div class="skill-items">
+              <div class="skill-item">SQL</div>
+              <div class="skill-item">MySQL/MariaDB</div>
+              <div class="skill-item">NoSQL</div>
+            </div>
+          </div>
+          
+          <div class="skill-category special">
+            <h3>Compétences techniques spécialisées</h3>
+            <div class="skill-tags">
+              <span class="tech-tag">SEO/Référencement</span>
+              <span class="tech-tag">Web Scraping</span>
+              <span class="tech-tag">Gestion de projet agile</span>
+              <span class="tech-tag">Intégration de contenu</span>
+              <span class="tech-tag">Personnalisation CMS</span>
+              <span class="tech-tag">Git/GitLab</span>
+              <span class="tech-tag">DataGrip</span>
+              <span class="tech-tag">SSMS</span>
+              <span class="tech-tag">Adobe Suite</span>
+              <span class="tech-tag">SSH</span>
+              <span class="tech-tag">Linux</span>
+              <span class="tech-tag">Windows</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Parcours académique</span>
+          <h2 class="section-title">Formation</h2>
+        </div>
+        
+        <div class="education-grid">
+          <div class="education-card current">
+            <div class="education-year">2025</div>
+            <div class="education-content">
+              <h3>Bachelor DevOps Fullstack / IA</h3>
+              <h4>EPSI</h4>
+              <p>Formation spécialisée en développement full stack, DevOps et intelligence artificielle. 
+                 Apprentissage des méthodologies agiles, des outils de CI/CD et des technologies IA modernes.</p>
+              <div class="education-status">En cours</div>
+            </div>
+          </div>
+          
+          <div class="education-card">
+            <div class="education-year">2024</div>
+            <div class="education-content">
+              <h3>BTS SIO option SLAM</h3>
+              <h4>Services Informatiques aux Organisations</h4>
+              <p>Spécialisation en Solutions Logicielles et Applications Métiers. 
+                 Développement d'applications, gestion de bases de données et programmation orientée objet.</p>
+              <div class="education-status completed">Obtenu</div>
+            </div>
+          </div>
+          
+          <div class="education-card">
+            <div class="education-year">2022</div>
+            <div class="education-content">
+              <h3>Baccalauréat</h3>
+              <h4>Option Gestion Finance</h4>
+              <p>Formation technologique avec spécialisation en gestion et finance, 
+                 développant les compétences en analyse financière et en gestion d'entreprise.</p>
+              <div class="education-status completed">Obtenu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Prenons contact</span>
+          <h2 class="section-title">Travaillons ensemble</h2>
+          <p class="section-description">
+            Je suis actuellement en recherche d'une alternance pour mon Bachelor 3ème année IT DevOps Full Stack / IA. 
+            N'hésitez pas à me contacter pour discuter d'opportunités ou simplement échanger !
           </p>
+        </div>
+        
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Informations de contact</h3>
+            <div class="contact-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:elyesamor96@gmail.com">elyesamor96@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <h4>Localisation</h4>
+                <p>Lyon, France</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+              </svg>
+              <div>
+                <h4>Statut</h4>
+                <p>Disponible pour alternance</p>
+              </div>
+            </div>
+          </div>
           
-          <div>
-          <p>Powered by</p>
-          <img src="./assets/logo2.png" />
+          <div class="contact-links">
+            <h3>Retrouvez-moi sur</h3>
+            <div class="social-grid">
+              <a href="https://github.com/Mooodrix" target="_blank" class="social-card">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <div>
+                  <h4>GitHub</h4>
+                  <p>Mes projets open source</p>
+                </div>
+              </a>
+              
+              <a href="https://www.linkedin.com/in/elyesllla/" target="_blank" class="social-card">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <div>
+                  <h4>LinkedIn</h4>
+                  <p>Mon réseau professionnel</p>
+                </div>
+              </a>
+            </div>
+            
+            <div class="discord-contact">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.195.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+              <div>
+                <h4>Discord</h4>
+                <p><strong>modrix2.0</strong></p>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-main">
+          <h3>Elyès Amor</h3>
+          <p>Développeur Full Stack DevOps & IA</p>
+          <p>Étudiant en Bachelor 3ème année à l'EPSI</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#experience">Expériences</a></li>
+              <li><a href="#projects">Projets</a></li>
+              <li><a href="#education">Formation</a></li>
+              <li><a href="#skills">Compétences</a></li>
+            </ul>
           </div>
-          </div>
-          </footer>
-          </main>
           
-          <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-          <script type="module" src="assets/js/main.js"></script>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="mailto:elyesamor96@gmail.com">Email</a></li>
+              <li><a href="https://github.com/Mooodrix" target="_blank">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/elyesllla/" target="_blank">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Elyès Amor. Tous droits réservés.</p>
+        <p>Développé avec passion 💙</p>
+      </div>
+    </div>
+  </footer>
 
-
+  <!-- Scripts -->
   <script>
-  document.getElementById("scroll-arrow").addEventListener("click", function() {
-    document.getElementById("s-about").scrollIntoView({ behavior: 'smooth' });
-  });
-</script>
+    // Navigation mobile toggle
+    const navToggle = document.querySelector('.nav__toggle');
+    const navMenu = document.querySelector('.nav__menu');
+    
+    navToggle?.addEventListener('click', () => {
+      navMenu.classList.toggle('nav__menu--open');
+      navToggle.classList.toggle('nav__toggle--open');
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Header background on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 100) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    });
 
-          </body>
-          
-          </html>
+    // Portfolio Carousel
+    const carouselTrack = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    let currentSlide = 0;
+    const totalSlides = indicators.length;
+    
+    function updateCarousel() {
+      const offset = -currentSlide * 100;
+      carouselTrack.style.transform = `translateX(${offset}%)`;
+      
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentSlide);
+      });
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+    
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+    
+    // Event listeners
+    nextBtn?.addEventListener('click', nextSlide);
+    prevBtn?.addEventListener('click', prevSlide);
+    
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentSlide = index;
+        updateCarousel();
+      });
+    });
+    
+    // Auto-play carousel disabled for manual control
+    // setInterval(nextSlide, 5000); // Disabled auto-play
+  </script>
+</body>
+</html>
