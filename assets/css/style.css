@@ -273,6 +273,11 @@ body {
   width: 100%;
 }
 
+/* Hide checkbox */
+.nav__checkbox {
+  display: none;
+}
+
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -307,7 +312,8 @@ body {
     border-top: 1px solid var(--border-primary);
   }
   
-  .nav__menu--open {
+  /* CSS-only mobile menu toggle */
+  .nav__checkbox:checked ~ .nav__menu {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
@@ -317,15 +323,16 @@ body {
     display: flex;
   }
   
-  .nav__toggle--open span:nth-child(1) {
+  /* Burger menu animation */
+  .nav__checkbox:checked + .nav__toggle span:nth-child(1) {
     transform: rotate(45deg) translate(9px, 9px);
   }
   
-  .nav__toggle--open span:nth-child(2) {
+  .nav__checkbox:checked + .nav__toggle span:nth-child(2) {
     opacity: 0;
   }
   
-  .nav__toggle--open span:nth-child(3) {
+  .nav__checkbox:checked + .nav__toggle span:nth-child(3) {
     transform: rotate(-45deg) translate(9px, -9px);
   }
 }
@@ -964,13 +971,19 @@ body {
     0 0 0 1px var(--border-primary);
 }
 
+/* Hide radio buttons */
+.carousel-container input[type="radio"] {
+  display: none;
+}
+
 .carousel-track {
   display: flex;
+  width: 500%;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item {
-  min-width: 100%;
+  width: 20%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1046,6 +1059,18 @@ body {
   margin: 0 auto;
 }
 
+/* CSS-only carousel navigation */
+#slide1:checked ~ .carousel-track { transform: translateX(0%); }
+#slide2:checked ~ .carousel-track { transform: translateX(-20%); }
+#slide3:checked ~ .carousel-track { transform: translateX(-40%); }
+#slide4:checked ~ .carousel-track { transform: translateX(-60%); }
+#slide5:checked ~ .carousel-track { transform: translateX(-80%); }
+
+/* Navigation arrows (hidden for CSS-only version) */
+.carousel-nav {
+  display: none;
+}
+
 .carousel-controls {
   display: flex;
   align-items: center;
@@ -1053,36 +1078,6 @@ body {
   gap: var(--space-lg);
   margin-top: var(--space-xl);
   padding: var(--space-md) 0;
-}
-
-.carousel-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border: none;
-  border-radius: 50%;
-  background: var(--bg-card);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 0 0 1px var(--border-primary);
-}
-
-.carousel-btn:hover {
-  background: var(--primary);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 
-    0 10px 25px -3px rgba(59, 130, 246, 0.3),
-    0 0 0 1px var(--primary);
-}
-
-.carousel-btn:active {
-  transform: translateY(0);
 }
 
 .carousel-indicators {
@@ -1098,16 +1093,22 @@ body {
   background: var(--border-secondary);
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.indicator.active {
-  background: var(--primary);
-  transform: scale(1.2);
+  display: block;
 }
 
 .indicator:hover {
   background: var(--primary);
   transform: scale(1.1);
+}
+
+/* Active states for indicators */
+#slide1:checked ~ .carousel-controls .carousel-indicators label:nth-child(1),
+#slide2:checked ~ .carousel-controls .carousel-indicators label:nth-child(2),
+#slide3:checked ~ .carousel-controls .carousel-indicators label:nth-child(3),
+#slide4:checked ~ .carousel-controls .carousel-indicators label:nth-child(4),
+#slide5:checked ~ .carousel-controls .carousel-indicators label:nth-child(5) {
+  background: var(--primary);
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
@@ -1121,11 +1122,6 @@ body {
   
   .portfolio-caption p {
     font-size: 1.4rem;
-  }
-  
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
   }
   
   .carousel-controls {
