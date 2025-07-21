@@ -938,6 +938,11 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
+  
+  .timeline-links .project-link {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .timeline-links {
@@ -1342,67 +1347,6 @@ body {
 #slide5:checked ~ .carousel-arrows .arrow-prev { cursor: pointer; }
 #slide5:checked ~ .carousel-arrows .arrow-next { cursor: default; opacity: 0.5; }
 
-/* Portfolio overlay improvements */
-.portfolio-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.8) 0%,
-    rgba(30, 41, 59, 0.9) 100%
-  );
-  opacity: 0;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(5px);
-}
-
-.portfolio-item:hover .portfolio-overlay {
-  opacity: 1;
-}
-
-.overlay-content {
-  text-align: center;
-  color: white;
-  padding: var(--space-lg);
-}
-
-.overlay-content h4 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: var(--space-sm);
-  color: var(--primary);
-}
-
-.overlay-content p {
-  font-size: 1.4rem;
-  margin-bottom: var(--space-md);
-  opacity: 0.9;
-}
-
-.overlay-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-sm) var(--space-md);
-  background: var(--primary);
-  color: white;
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.overlay-link:hover {
-  background: var(--secondary);
-  transform: translateY(-2px);
-}
-
 /* Portfolio tags */
 .portfolio-tags {
   display: flex;
@@ -1496,22 +1440,6 @@ body {
   .arrow svg {
     width: 20px;
     height: 20px;
-  }
-  
-  .portfolio-overlay {
-    backdrop-filter: blur(3px);
-  }
-  
-  .overlay-content {
-    padding: var(--space-md);
-  }
-  
-  .overlay-content h4 {
-    font-size: 1.6rem;
-  }
-  
-  .overlay-content p {
-    font-size: 1.2rem;
   }
 }
 
