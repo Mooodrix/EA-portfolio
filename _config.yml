@@ -1,0 +1,35 @@
+# GitHub Pages configuration
+# This file ensures GitHub Pages processes the site correctly
+
+# Theme (optional, using default)
+theme: 
+
+# Include all assets
+include:
+  - assets
+  - _*
+
+# Exclude unnecessary files
+exclude:
+  - README.md
+  - Gemfile*
+  - node_modules
+  - vendor
+
+# Safe mode
+safe: true
+
+# Markdown processor
+markdown: kramdown
+
+# Syntax highlighting
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-relative-links
+
+# Relative links
+relative_links:
+  enabled: true
+  collections: false
